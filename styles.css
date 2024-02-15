@@ -18,57 +18,23 @@ body {
   align-items: center;
   position: relative;
 }
-.dots{
+.dots span{
   position: absolute;
-}
-.loader{
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  left: -35px;
-  animation: rotate 3.2s linear infinite;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: rotate(calc(var(--i)*(360deg / 10))) translateY(35px);
+  animation: rotate 1.5s linear infinite;
+  animation-delay: calc(var(--i)*0.1s);
+  opacity: 0;
 }
 @keyframes rotate{
-  30%{
-    transform: rotate(220deg);
-  }
-  40%{
-    transform: rotate(400deg);
-
-  }
-  75%{
-    transform: rotate(700deg);
-
-  }
-  76%{
-    opacity: 0;
-
-  }
-  100%{
-    transform: rotate(0deg);
-    opacity: 1;
-
-  }
+0%{
+  opacity:1;
 }
-.loader:nth-child(1){
-  animation-delay: 0.15s;
+100%{
+  opacity: 0;
+
 }
-.loader:nth-child(2){
-  animation-delay: 0.30s;
-}.loader:nth-child(3){
-  animation-delay: 0.45s;
-}.loader:nth-child(4){
-  animation-delay: 0.60s;
-}.loader:nth-child(5){
-  animation-delay: 0.75s;
-}.loader:nth-child(6){
-  animation-delay: 0.90s;
-}
-.element{
-  width: 8px;
-  height: 8px;
-  background-color: #fff;
-  position: relative;
-  top: 25px;
-  border-radius: 50%;
 }
